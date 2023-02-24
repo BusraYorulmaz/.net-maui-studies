@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiStudies1.MainPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <!--LISTVİEW-->
+    <!--<ListView x:Name="LvFruits" HasUnevenRows="True" ItemSelected="LvFruits_ItemSelected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Margin="20" Padding="10">
+                        <Image Source="{Binding ImageName}" HeightRequest="60" WidthRequest="60"/>
+                        <Label Text="{Binding Name}" FontSize="Medium" TextColor="Black"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>-->
+    
+    <!--CollectionView-->
+    <CollectionView x:Name="LvFruits"  SelectionChanged="LvFruits_SelectionChanged" SelectionMode="Single">
+        <CollectionView.ItemsLayout>
+            <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="20" VerticalItemSpacing="20" />
+        </CollectionView.ItemsLayout>
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <StackLayout BackgroundColor="LightGray" Margin="20" Padding="10">
+                    <Image HorizontalOptions="Center" Source="{Binding ImageName}" HeightRequest="60" WidthRequest="60"/>
+                    <Label HorizontalOptions="Center" Text="{Binding Name}" FontSize="Medium" TextColor="Black"/>
+                </StackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+
+</ContentPage>
